@@ -18,7 +18,7 @@ body {
   line-height: 1.2;
   color: #141414;
   font-family: "Zen Old Mincho", "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Noto Serif JP", serif;
- 
+
 }
 
 p {
@@ -157,35 +157,35 @@ header
     }
   }
 
-&__nav {
-  display: block;
+  &__nav {
+    display: block;
 
-  @include tab {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100dvh;
-    padding: 100px 40px 40px 100px;
-    overflow-y: auto;
-    background: #fff;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    overscroll-behavior: contain;
-    -webkit-overflow-scrolling: touch;
-    transition: opacity .3s, visibility .3s;
-  }
-
-  &.is-open {
     @include tab {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100dvh;
+      padding: 100px 40px 40px 100px;
+      overflow-y: auto;
+      background: #fff;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+      transition: opacity .3s, visibility .3s;
+    }
+
+    &.is-open {
+      @include tab {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
     }
   }
-}
 
   &__list {
     margin: 0;
@@ -193,11 +193,21 @@ header
     list-style: none;
 
     @include tab {
-      width: 100%;
+      width: 200px;
+      margin: 0 auto;
+      padding: 0 0 80px;
     }
 
     li {
       margin-bottom: 22px;
+
+      @include tab{
+            &:last-of-type {
+      padding-bottom: 60px;
+      }
+      }
+
+
     }
 
     a {
