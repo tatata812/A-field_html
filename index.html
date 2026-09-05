@@ -34,77 +34,38 @@
   <link rel="stylesheet" href="assets/css/style.css?20260121">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-  <!-- Google Fonts（使う場合） -->
-  <!--
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-  -->
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap"
+    rel="stylesheet">
 
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 
-<!-- モトクロス用 -->
-<!-- <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="format-detection" content="email=no,telephone=no,address=no">
-  <title>宇部市スポーツ協会</title>
-  <meta name="description" content="<?php echo $des; ?>">
-  <meta property="og:type" content="website">
-  <meta property="og:title"
-    content="<?php wp_title( '-', true, 'right' ); ?><?php bloginfo( 'name' ); ?> | <?php echo $des; ?>">
-  <meta property="og:description" content="<?php echo $des; ?>">
-  <meta property="og:site_name"
-    content="<?php wp_title( '-', true, 'right' ); ?><?php bloginfo( 'name' ); ?> | <?php echo $des; ?>">
-  <meta property="og:locale" content="ja_JP">
-  <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/assets/img/fb.jpg">
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title"
-    content="<?php wp_title( '-', true, 'right' ); ?><?php bloginfo( 'name' ); ?> | <?php echo $des; ?>">
-  <meta name="twitter:description" content="<?php echo $des; ?>">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;800&family=Noto+Sans:wght@300;400&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-  <link rel="stylesheet" type="text/css"
-    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-  <link rel="stylesheet" href="assets/css/html5reset-1.6.1.css">
-  <link rel="stylesheet" href="assets/css/style.css?20260121">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-</head> -->
-
-
-
 <body class="wrap">
-  <header class="site-header">
-    <div class="site-header__inner">
-      <!-- ロゴ -->
-      <h1 class="site-header__logo">
-        <a href="/">Site Title</a>
-      </h1>
-
-      <!-- PC用ナビ -->
-      <nav class="site-header__nav">
-        <ul class="site-header__nav-list">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Service</a></li>
-          <li><a href="#">Works</a></li>
-          <li><a href="#">Contact</a></li>
+  <header class="header">
+    <div class="header__inner">
+      <a href="/" class="header__logo">
+        <img src="assets/img/top/logo.png" alt="A.field Group">
+      </a>
+      <nav class="header__nav">
+        <ul class="header__list">
+          <li><a href="#about">A.field について</a></li>
+          <li><a href="#philosophy">Philosophy</a></li>
+          <li><a href="#mission">MISSION</a></li>
+          <li><a href="#vision">VISION</a></li>
+          <li><a href="#value">VALUE</a></li>
+          <li><a href="#business">OUR BUSINESS</a></li>
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#message">Message</a></li>
+          <li><a href="#company">Company Profile</a></li>
+          <!-- <li><a href="#contact">Contact</a></li> -->
         </ul>
       </nav>
-
-      <!-- ハンバーガー -->
-      <button class="site-header__menu-btn" type="button" aria-label="メニュー" aria-expanded="false">
+      <button class="header__menu" type="button" aria-label="メニューを開く" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -112,50 +73,226 @@
     </div>
   </header>
 
-  <!-- ▼ SP用 展開メニュー -->
-  <nav class="sp-menu" aria-hidden="true">
-    <div class="sp-menu__inner">
-      <ul class="sp-menu__list">
-        <li class="sp-menu__item"><a class="sp-menu__link" href="#">About</a></li>
-        <li class="sp-menu__item"><a class="sp-menu__link" href="#">Service</a></li>
-        <li class="sp-menu__item"><a class="sp-menu__link" href="#">Works</a></li>
-        <li class="sp-menu__item"><a class="sp-menu__link" href="#">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+  <main class="main">
 
-  <div class="sp-menu__overlay" aria-hidden="true"></div>
 
-  <div class="main page-top" style="height: 800px; background-color: pink;">
-
-  </div>
-  <!--main end-->
-
-  <footer class="site-footer">
-    <div class="site-footer__inner">
-      <!-- フッターロゴ -->
-      <div class="site-footer__logo">
-        <a href="/">Site Title</a>
+    <section class="fv">
+      <div class="fv__bg">
+        <div class="fv__bg-fixed"></div>
       </div>
 
-      <!-- フッターナビ -->
-      <nav class="site-footer__nav">
-        <ul class="site-footer__nav-list">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Service</a></li>
-          <li><a href="#">Works</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+      <div class="fv__copy">
+        <h1 class="fv__heading">
+          <span class="fv__heading-line">
+            <span class="fv__heading-large">志</span>ある未来を、
+          </span>
+          <span class="fv__heading-line">
+            <span class="fv__heading-large">愛</span>と<span class="fv__heading-large">熱意</span>で<br
+              class="sp-block">創造していく。
+          </span>
+        </h1>
+        <p class="fv__en">- Beauty and richness, connected to the future.</p>
+      </div>
 
-    <!-- コピーライト -->
-    <div class="site-footer__bottom">
-      <p class="site-footer__copyright">
-        © 2026 Site Title
-      </p>
-    </div>
-  </footer>
+      <div class="fv__word fv__word--aspiration">
+        <img src="assets/img/top/fv_aspiration.png" alt="志 Aspiration">
+      </div>
+
+      <div class="fv__word fv__word--passion">
+        <img src="assets/img/top/fv_passion.png" alt="熱意 Passion">
+      </div>
+
+      <div class="fv__word fv__word--love">
+        <img src="assets/img/top/fv_love.png" alt="愛 Love">
+      </div>
+
+      <div class="fv__logo">
+        <img src="assets/img/top/fv_logo.png" alt="A.field Group">
+      </div>
+    </section>
+
+    <!-- A.fieldについて -->
+    <section class="concept-section" id="about">
+      <div class="concept-section__bg">
+        <div class="concept-section__bg-fixed concept-section__bg-fixed--about"></div>
+      </div>
+      <div class="top-content">
+        <p class="top-content__sub">A.field について</p>
+        <h2 class="top-content__title">
+          人と社会の可能性を広げ、<br>
+          豊かな未来を創造する。
+        </h2>
+        <div class="top-content__body">
+          <p>
+            A.field は、「Aspiration ― 志」「Love ― 愛」「Passion ―
+            熱意」を大切に、人と社会の新たな可能性を創造する企業です。私たちが考える「豊かさ」とは、経済的な豊かさだけではありません。心身の健康、美しさ、学び、成長、人とのつながり――そのすべてが調和することで、本当の意味での「豊かな人生」が生まれると考えています。
+          </p>
+          <p>
+            A.field
+            という名前には、一人ひとりの可能性が広がり、新しい価値が生まれ、未来へと前進していく「Field（場所・領域）」でありたいという想いが込められています。コンサルティング、教育・金融、美容・再生医療、ジュエリー、食――一見異なる事業も、根底にある想いは一つ。「人の可能性を広げ、その人らしい豊かさへとつなげること。」
+          </p>
+          <p>
+            そして、一つひとつの事業が互いの価値を高め合い、新しい相乗効果を生み出すことで、これまでにない価値を社会へ届けていきます。
+          </p>
+          <p>
+            高い志を持ち、人を想う愛を忘れず、未来を切り拓く熱意を持って挑戦し続ける。
+          </p>
+          <p>
+            美と豊かさを、未来へつなぐ。<br>
+            それが、A.field の目指す姿です。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section class="concept-section" id="philosophy">
+      <div class="concept-section__bg">
+        <div class="concept-section__bg-fixed concept-section__bg-fixed--philosophy"></div>
+      </div>
+      <div class="top-content">
+        <p class="top-content__sub">Philosophy ― 企業理念</p>
+        <h2 class="top-content__title">
+          志を持ち、愛をもって、<br>
+          未来を創る。
+        </h2>
+        <div class="top-content__body">
+          <p>
+            A.field が大切にする原点は、<br>
+            <strong>「Aspiration ― 志」「Love ― 愛」「Passion ― 熱意」</strong>です。
+          </p>
+          <p>
+            高い志を持つこと。<br>
+            人を想い、愛をもって向き合うこと。<br>
+            そして、熱意を持って行動し続けること。<br>
+            私たちは、この三つの精神が、人を成長させ、新しい価値を生み出し、より豊かな未来を創る力になると考えています。<br>
+            企業の成長は、利益や規模だけで測られるものではありません<br>
+            そこに関わる人が成長し、可能性を広げ、喜びや豊かさを感じ、その価値がさらに周囲や社会へと広がっていく。
+          </p>
+          <p>
+            <strong>
+              人の成長が企業の成長となり、企業の成長が社会の豊かさへとつながっていく。</strong><br>
+            そのような価値の循環を生み出すことが、A.field の使命です。<br>
+            私たちは、目の前の利益だけを追うのではなく、信頼を積み重ね、本質的な価値を追求し、長く社会から必要とされる企業であり続けます。<br>
+            そして、一人ひとりの違いや個性を尊重し、それぞれが持つ力を生かしながら、新たな可能性に挑戦し続けます。
+          </p>
+          <p>
+            <strong>
+              志が未来を描き、<br>
+              愛が人をつなぎ、<br>
+              熱意が未来を動かす。
+            </strong><br>
+            A.field は、人と社会の可能性を広げ、<br>
+            より美しく、より豊かな未来の創造に貢献していきます。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION -->
+    <section class="concept-section" id="mission">
+      <div class="concept-section__bg">
+        <div class="concept-section__bg-fixed concept-section__bg-fixed--mission"></div>
+      </div>
+      <div class="top-content">
+        <p class="top-content__sub">MISSION ― 私たちの使命</p>
+        <h2 class="top-content__title">
+          人の可能性を信じ、<br>
+          豊かさのその先にある、<br>
+          幸せな未来を創る。
+        </h2>
+        <div class="top-content__body">
+          <p>
+            私たちは、一人ひとりの中に、まだ見ぬ可能性があると信じています。<br>
+            人は、学び、挑戦し、人と出会い、新しい価値に触れることで、何歳からでも成長し、人生をより良い方向へ変えていくことができます。<br>
+            A.field の使命は、さまざまな事業を通じて、その可能性が開花する「きっかけ」と「場所」を創り、人々の人生に新たな選択肢と価値を届けることです。<br>
+            私たちが目指す豊かさは、経済的な豊かさだけではありません。<br>
+            心の豊かさ、健康、美しさ、学びと成長、大切な人とのつながり、自由に人生を選択できること。
+          </p>
+          <p>
+            そして、自分が得た豊かさを誰かのために生かし、次の世代へとつないでいくこと。<br>
+            <strong>人が豊かになれば、人を豊かにできる。</strong><br>
+            <strong>人が幸せになれば、その幸せを誰かに届けることができる。</strong><br>
+            私たちは、そんな「豊かさと幸せの循環」が、人から人へ、そして社会へと広がっていく未来を創りたいと考えています。
+          </p>
+          <p>
+            高い志を持ち、愛をもって人と向き合い、熱意をもって行動する。<br>
+            目の前の一人を大切にすることから、未来は変わっていく。<br>
+            A.field は、人の可能性を信じ、その可能性を社会の新しい価値へとつなぎながら<br>
+            <strong>人々が自らの人生をより豊かに、より自由に、そして誇りを持って生きられる社会の実現に貢献します。</strong>
+          </p>
+          <p>
+            それが、私たち A.field の使命です。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISION -->
+    <section class="concept-section" id="vision">
+      <div class="concept-section__bg">
+        <div class="concept-section__bg-fixed concept-section__bg-fixed--vision"></div>
+      </div>
+      <div class="top-content">
+        <p class="top-content__sub">VISION ― 私たちが目指す未来</p>
+        <h2 class="top-content__title">
+          愛と信頼がつながり、<br>
+          誰もが自分らしく輝ける、<br>
+          豊かな社会へ。
+        </h2>
+        <div class="top-content__body">
+          <p>
+            <strong>私たちが目指すのは、</strong><br>
+            人と人とが愛と信頼でつながり、一人ひとりが自らの可能性を信じ、希望を持って未来へ歩んでいける社会です。
+          </p>
+          <p>
+            時代がどれほど変化し、テクノロジーが進化しても、社会をつくり、未来を動かしていく中心にいるのは<strong>「人」</strong>です。
+          </p>
+          <p>
+            だからこそ A.field は、事業の先にいる一人ひとりと誠実に向き合い、その人が持つ個性や可能性を尊重し、新しい一歩を踏み出す力となることを大切にします。
+          </p>
+          <p>
+            <strong>
+              私たちが生み出す価値によって、一人の人生が豊かになる。<br>
+              その人の笑顔や幸せが家族や大切な人へ伝わり、やがて地域へ、社会へ、そして次の世代へと広がっていく。
+            </strong>
+          </p>
+          <p>
+            私たちは、そんな<strong>「幸せと豊かさの連鎖」</strong>を生み出す企業でありたいと考えています。
+          </p>
+          <p>
+            そして、経済的な豊かさだけではなく、心、健康、美しさ、学び、人とのつながり、時間、そして人生を自ら選択できる自由。<br>
+            それぞれの価値が調和し、一人ひとりが自分らしく、誇りと希望を持って生きられる未来を目指します。
+          </p>
+          <p>
+            私たち自身もまた、現状に満足することなく、学び、挑戦し、成長し続けます。<br>
+            新しい価値を創造し、異なる分野、人、想いをつなぎ、その可能性をさらに大きな力へと変えていく。
+          </p>
+          <p>
+            <strong>
+              一人の可能性が、誰かの希望になる。<br>
+              一人の幸せが、誰かの幸せにつながっていく。
+            </strong>
+          </p>
+          <p>
+            その小さな積み重ねが、やがて社会を変え、未来を変えていくと私たちは信じています。
+          </p>
+          <p>
+            <strong>愛と信頼が中心にある社会へ。</strong><br>
+            A.field は、志を共にする人々とともに、<br>
+            美しく、豊かで、希望に満ちた未来を創造していきます。
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <!--main end-->
+
+
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 

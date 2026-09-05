@@ -5,43 +5,397 @@
 
  ================================= */
 
-.aaa {
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 9999;
 
-  &__ {}
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-  &__ {}
+  &__logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 30px;
 
-  &__ {}
+    @include tab {
+      width: 110px;
+      margin-bottom: 24px;
+    }
+  }
 
-  &__ {}
+  &__line {
+    display: block;
+    width: 140px;
+    height: 1px;
+    overflow: hidden;
+    background: rgba(174, 127, 44, .2);
 
-  &__ {}
+    @include tab {
+      width: 100px;
+    }
+  }
 
-  &__ {}
+  &__bar {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #ae7f2c;
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+}
 
-  &__ {}
+/* =================================
+  ファーストビュー
+================================= */
 
-  &__ {}
+.fv {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  margin-bottom: 200px;
+  overflow: hidden;
 
-  &__ {}
+  @include tab {
+    height: calc(100svh);
+    min-height: 600px;
+    margin-bottom: 80px;
+  }
 
-  &__ {}
+  &__bg {
+    position: absolute;
+    inset: 0;
+    clip-path: inset(0);
+    z-index: 0;
+  }
 
-  &__ {}
+  &__bg-fixed {
+    position: fixed;
+    top: 0;
+    left: 210px;
+    width: calc(100% - 210px);
+    height: 100vh;
+    background-image: url("../img/top/fv.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: scale(1.04);
 
-  &__ {}
+    @include tab {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: calc(100svh);
+      background-position: 58% center;
+    }
+  }
 
-  &__ {}
+  &__copy {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
 
-  &__ {}
+    @include tab {
+      top: 25%;
+      width: 90%;
+      text-align: center;
+    }
+  }
 
-  &__ {}
+  &__heading {
+    margin: 0;
+    color: #17100c;
+    font-size: clamp(42px, 3.7vw, 68px);
+    font-weight: 400;
+    line-height: 1.75;
+    letter-spacing: .12em;
 
-  &__ {}
+    @include pc {
+      font-size: clamp(24px, 6.5vw, 32px);
+      line-height: 1.8;
+      letter-spacing: .06em;
+    }
+  }
 
-  &__ {}
+  &__heading-line {
+    display: block;
+    opacity: 0;
+    transform: translateY(30px);
+    white-space: nowrap;
+
+    @include tab {
+      white-space: normal;
+    }
+  }
+
+  &__heading-large {
+    display: inline-block;
+    color: #72531e;
+    font-size: 1.45em;
+    line-height: 1;
+    letter-spacing: .08em;
+
+    @include pc {
+      font-size: 1.35em;
+    }
+  }
+
+  &__en {
+    margin: 28px 0 0;
+    color: #9d7945;
+    font-size: clamp(16px, 1.5vw, 28px);
+    line-height: 1.5;
+    letter-spacing: .02em;
+
+    @include tab {
+      width: 100%;
+      margin-top: 18px;
+      font-size: 13px;
+      line-height: 1.7;
+      text-align: center;
+    }
+  }
+
+  &__word {
+    position: absolute;
+    z-index: 2;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    &--aspiration {
+      bottom: 10%;
+      left: 12%;
+      width: clamp(120px, 13vw, 220px);
+
+      @include tab {
+        bottom: 28%;
+        left: 8%;
+        width: 120px;
+      }
+    }
+
+    &--passion {
+      bottom: 23%;
+      left: 34%;
+      width: clamp(140px, 15vw, 250px);
+
+      @include tab {
+        bottom: 38%;
+        left: 50%;
+        width: 145px;
+        transform: translateX(-50%);
+      }
+    }
+
+    &--love {
+      right: 28%;
+      bottom: 10%;
+      width: clamp(120px, 13vw, 220px);
+
+      @include tab {
+        right: 8%;
+        bottom: 28%;
+        width: 100px;
+      }
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    right: 4%;
+    bottom: 6%;
+    z-index: 2;
+    width: clamp(150px, 15vw, 260px);
+
+    @include tab {
+      right: 5%;
+      bottom: 10%;
+      width: 100px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+/* =================================
+  ファーストビュー アニメーション
+================================= */
+
+.fv__heading span,
+.fv__en,
+.fv__word img,
+.fv__logo img {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* =================================
+concept section
+================================= */
+.concept-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 80px 8% 220px;
+  overflow: hidden;
+  scroll-margin-top: 0;
+
+  @include tab {
+    min-height: 100svh;
+    padding: 64px 6% 150px;
+    scroll-margin-top: 52px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -60px;
+    left: 0;
+    height: 200px;
+    background: #fff;
+    z-index: 2;
+
+    @include tab {
+      height: 120px;
+          bottom: -24px;
+
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 80px;
+    left: 0;
+    clip-path: inset(0);
+    z-index: -1;
+
+    @include tab {
+      bottom: 50px;
+    }
+  }
+
+  &__bg-fixed {
+    position: fixed;
+    top: 0;
+    left: 210px;
+    width: calc(100% - 210px);
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include tab {
+      top: 70px;
+      left: 0;
+      width: 100%;
+      height: calc(100svh - 70px);
+    }
+
+    &--about {
+      background-image: url("../img/top/bg_about.png");
+    }
+
+    &--philosophy {
+      background-image: url("../img/top/bg_philosophy.png");
+    }
+
+    &--mission {
+      background-image: url("../img/top/bg_mission.png");
+    }
+
+    &--vision {
+      background-image: url("../img/top/bg_vision.png");
+    }
 
 
+  }
+}
+
+/* =================================
+top content
+================================= */
+.top-content {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1100px);
+  margin: 0 auto;
+
+  &__sub {
+    margin: 0 0 20px;
+    color: #9a7743;
+    font-size: 20px;
+
+    @include tab {
+      margin-bottom: 14px;
+      font-size: 16px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 40px;
+    color: #4d3a22;
+    font-size: clamp(34px, 4vw, 50px);
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: .05em;
+
+    @include tab {
+      margin-bottom: 30px;
+      font-size: 24px;
+      line-height: 1.7;
+    }
+  }
+
+  &__body {
+    max-width: 920px;
+
+    p {
+      margin: 0 0 24px;
+      color: #444;
+      font-size: 16px;
+      font-weight: 100;
+      line-height: 1.6;
+      letter-spacing: .04em;
+
+      @include tab {
+        margin-bottom: 20px;
+        font-size: 15px;
+        line-height: 2;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    strong {
+      font-weight: 900;
+    }
+  }
 }
 
 /* =================================
