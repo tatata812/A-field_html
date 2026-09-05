@@ -305,7 +305,7 @@ concept section
     top: 70px;
     left: 0;
     width: 100%;
-    height: calc(100svh - 70px);
+    height: 100dvh;
   }
 }
 .concept-section__bg-fixed--about {

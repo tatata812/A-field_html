@@ -279,7 +279,7 @@ concept section
 
     @include tab {
       height: 120px;
-          bottom: -24px;
+      bottom: -24px;
 
     }
   }
@@ -312,7 +312,7 @@ concept section
       top: 70px;
       left: 0;
       width: 100%;
-      height: calc(100svh - 70px);
+      height: 100dvh;
     }
 
     &--about {
