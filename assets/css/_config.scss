@@ -5,7 +5,7 @@ $bg: #ecf9ef;
 
 $bp-sp: 600px;
 $bp-tab: 820px;
-$bp-pc: 1120px;
+$bp-pc: 1240px;
 
 @mixin sp  { @media (max-width: $bp-sp)  { @content; } }
 @mixin tab { @media (max-width: $bp-tab) { @content; } }
