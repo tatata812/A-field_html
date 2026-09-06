@@ -2,64 +2,8 @@
 
 /* トップページスタイルシート */
 /* =================================
-
- ================================= */
-
-.loading {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  z-index: 9999;
-
-  &__inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  &__logo {
-    width: 150px;
-    height: auto;
-    margin-bottom: 30px;
-
-    @include tab {
-      width: 110px;
-      margin-bottom: 24px;
-    }
-  }
-
-  &__line {
-    display: block;
-    width: 140px;
-    height: 1px;
-    overflow: hidden;
-    background: rgba(174, 127, 44, .2);
-
-    @include tab {
-      width: 100px;
-    }
-  }
-
-  &__bar {
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: #ae7f2c;
-    transform: scaleX(0);
-    transform-origin: left center;
-  }
-}
-
-/* =================================
   ファーストビュー
 ================================= */
-
 .fv {
   position: relative;
   width: 100%;
@@ -125,12 +69,13 @@
   &__copy {
     position: absolute;
     top: 30%;
-    left: 50%;
+    left: 40%;
     z-index: 2;
     transform: translate(-50%, -50%);
 
     @include tab {
       top: 25%;
+      left: 50%;
       width: 90%;
       text-align: center;
     }
@@ -373,8 +318,6 @@ concept section
     &--company {
       background-image: url("../img/top/bg_company.png");
     }
-
-
   }
 }
 
@@ -439,6 +382,22 @@ top content
       font-weight: 900;
     }
   }
+
+  &__line {
+
+    display: inline-block;
+    flex-shrink: 0;
+    width: 30px;
+    height: 1px;
+    margin: 0 4px;
+    background: currentColor;
+    vertical-align: middle;
+
+    @include tab {
+      width: 30px;
+      margin: 0 10px 0 0;
+    }
+  }
 }
 
 /* =================================
@@ -447,13 +406,13 @@ value content
 .value-content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 18px;
   width: min(100%, 1100px);
   margin: 80px auto 0;
 
   @include pc {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 16px;
     margin-top: 50px;
   }
 
@@ -631,8 +590,8 @@ business content
   width: min(100%, 1100px);
   margin: 80px auto 0;
 
-  @include pc{
-  grid-template-columns: repeat(2, 1fr);
+  @include pc {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @include tab {
@@ -696,11 +655,11 @@ business content
     font-weight: 400;
     line-height: 1.5;
     text-align: center;
-text-shadow:
-  1px 1px 3px rgba(255, 255, 255, .9),
-  -1px 1px 3px rgba(255, 255, 255, .9),
-  1px -1px 3px rgba(255, 255, 255, .9),
-  -1px -1px 3px rgba(255, 255, 255, .9);
+    text-shadow:
+      1px 1px 3px rgba(255, 255, 255, .9),
+      -1px 1px 3px rgba(255, 255, 255, .9),
+      1px -1px 3px rgba(255, 255, 255, .9),
+      -1px -1px 3px rgba(255, 255, 255, .9);
     transform: translateX(-50%);
 
     @include tab {
@@ -751,259 +710,367 @@ text-shadow:
 }
 
 /* =================================
-
+story-content
  ================================= */
 
-.aaa {
+.story-content {
+  width: min(100%, 1100px);
+  margin: 100px auto 0;
 
-  &__ {}
+  @include tab {
+    margin-top: 60px;
+  }
 
-  &__ {}
+  &__item {
+    display: grid;
+    grid-template-columns: 220px 110px 1fr 240px;
+    align-items: center;
+    gap: 28px;
+    min-height: 190px;
+    margin-bottom: 24px;
 
-  &__ {}
+    @include pc {
+      grid-template-columns: 220px 110px 1fr 220px;
+    }
 
-  &__ {}
+    @include pc {
+      grid-template-columns: 1fr 90px;
+      gap: 20px;
+      min-height: 0;
+      margin-bottom: 70px;
+    }
 
-  &__ {}
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 
-  &__ {}
+  &__year {
+    color: #80612c;
 
-  &__ {}
+    @include tab {
+      align-self: center;
+    }
+  }
 
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
+  &__year-main {
+    margin: 0 0 16px;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: .04em;
+    color: #80683f;
 
 
+    @include tab {
+      margin-bottom: 10px;
+      font-size: 38px;
+    }
+
+    span {
+      margin-left: 5px;
+      font-size: 23px;
+      letter-spacing: 0;
+
+      @include tab {
+        font-size: 18px;
+      }
+    }
+
+    &--jp {
+      font-size: 46px;
+      letter-spacing: .08em;
+
+      @include tab {
+        font-size: 34px;
+      }
+    }
+
+    &--field {
+      font-size: 43px;
+      letter-spacing: .01em;
+
+      @include tab {
+        font-size: 32px;
+      }
+    }
+  }
+
+  &__year-sub {
+    margin: 0;
+    color: #80612c;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.7;
+    letter-spacing: .04em;
+
+    @include tab {
+      font-size: 17px;
+      text-align: left;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include tab {
+      justify-content: flex-end;
+    }
+
+    img {
+      display: block;
+      width: 100px;
+      height: auto;
+
+      @include tab {
+        width: 72px;
+      }
+    }
+  }
+
+  &__body {
+    color: #555;
+
+    @include tab {
+      grid-column: 1 / -1;
+    }
+
+    p {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.9;
+      letter-spacing: .04em;
+
+      @include tab {
+        font-size: 14px;
+        line-height: 1.9;
+      }
+    }
+  }
+
+  &__note {
+    margin-top: 12px !important;
+    color: #927a55;
+    font-size: 13px !important;
+    line-height: 1.7 !important;
+
+    @include tab {
+      margin-top: 10px !important;
+      font-size: 12px !important;
+    }
+  }
+
+  &__image {
+    width: 100%;
+
+    @include pc {
+      grid-column: 1 / -1;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+
+      @include pc {
+        height: auto;
+        aspect-ratio: 16 / 10;
+      }
+    }
+  }
 }
 
 /* =================================
-
+ Message
  ================================= */
 
-.aaa {
+.message-content {
+  width: min(100%, 1100px);
+  margin: 80px auto 0;
 
-  &__ {}
+  @include tab {
+    margin-top: 50px;
+  }
 
-  &__ {}
+  &__intro {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    align-items: start;
+    gap: 40px;
+    margin-bottom: 50px;
 
-  &__ {}
+    @include tab {
+      grid-template-columns: 1fr;
+      gap: 35px;
+      margin-bottom: 40px;
+    }
+  }
 
-  &__ {}
+  &__visual {
+    overflow: hidden;
 
-  &__ {}
+    @include tab {
+      width: min(100%, 420px);
+      margin: 0 auto;
+    }
 
-  &__ {}
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
 
-  &__ {}
+  &__intro-text {
+    p {
+      margin: 0 0 22px;
+      color: #444;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.9;
+      letter-spacing: .04em;
 
-  &__ {}
+      @include tab {
+        margin-bottom: 20px;
+        font-size: 14px;
+        line-height: 2;
+      }
 
-  &__ {}
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
 
-  &__ {}
+    strong {
+      color: #333;
+      font-weight: 900;
+    }
+  }
 
-  &__ {}
+  &__body {
+    p {
+      margin: 0 0 28px;
+      color: #444;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.9;
+      letter-spacing: .04em;
 
-  &__ {}
+      @include tab {
+        margin-bottom: 24px;
+        font-size: 14px;
+        line-height: 2;
+      }
+    }
 
-  &__ {}
+    strong {
+      color: #333;
+      font-weight: 900;
+    }
+  }
 
-  &__ {}
+  &__emphasis {
+    margin: 40px 0 !important;
 
-  &__ {}
+    @include tab {
+      margin: 32px 0 !important;
+    }
 
-  &__ {}
+    strong {
+      font-size: 16px;
 
-  &__ {}
+      @include tab {
+        font-size: 15px;
+      }
+    }
+  }
 
+  &__signature {
+    margin-top: 55px;
 
+    @include tab {
+      margin-top: 40px;
+    }
+
+    p {
+      margin: 0 0 4px;
+      color: #444;
+      font-size: 15px;
+      line-height: 1.7;
+
+      @include tab {
+        font-size: 14px;
+      }
+    }
+  }
 }
 
 /* =================================
-
+Company Profile
  ================================= */
 
-.aaa {
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-
-}
-
-/* =================================
-
- ================================= */
-
-.aaa {
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-
-}
-
-/* =================================
-
- ================================= */
-
-.aaa {
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-
-}
-
-/* =================================
-
- ================================= */
-
-.aaa {
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-
+.company-content {
+  width: min(100%, 1200px);
+  margin: 80px auto 0;
+
+  @include tab {
+    margin-top: 50px;
+  }
+
+  &__list {
+    margin: 0;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    align-items: center;
+    min-height: 110px;
+    border-top: 1px solid rgba(60, 50, 40, .7);
+
+    @include tab {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      min-height: 0;
+      padding: 24px 0;
+    }
+
+    &:last-child {
+      border-bottom: 1px solid rgba(60, 50, 40, .7);
+    }
+
+    dt {
+      margin: 0;
+      padding-left: 45px;
+      color: #555;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: .18em;
+
+      @include tab {
+        padding-left: 0;
+        font-size: 15px;
+        letter-spacing: .15em;
+      }
+    }
+
+    dd {
+      margin: 0;
+      color: #444;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.8;
+      letter-spacing: .03em;
+
+      @include tab {
+        font-size: 14px;
+        line-height: 1.8;
+      }
+    }
+  }
 }

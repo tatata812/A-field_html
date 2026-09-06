@@ -1,5 +1,4 @@
 $(function () {
-
   /* =================================
   ヘッダー
    ================================= */
@@ -39,54 +38,6 @@ $(function () {
   });
 
   /* =================================
-  ページ内リンク　ヘッダーの高さ考慮
- ================================= */
-  // var $header = $('.header');
-
-  // function getHeaderH() {
-  //   if (!$header.length) return 0;
-  //   return $header.outerHeight() || 0;
-  // }
-
-  // function scrollToHash(hash, speed) {
-  //   if (!hash || hash === '#') return;
-
-  //   var $target = $(hash);
-  //   if (!$target.length) return;
-
-  //   var targetTop = $target.offset().top - getHeaderH();
-
-  //   $('html, body').stop().animate({
-  //       scrollTop: targetTop
-  //     },
-  //     typeof speed === 'number' ? speed : 400
-  //   );
-  // }
-
-  // $(document).on('click', 'a[href^="#"]', function (e) {
-  //   var href = $(this).attr('href');
-  //   if (!href || href === '#') return;
-  //   if (!$(href).length) return;
-
-  //   e.preventDefault();
-
-  //   if (history.pushState) {
-  //     history.pushState(null, null, href);
-  //   } else {
-  //     location.hash = href;
-  //   }
-
-  //   scrollToHash(href, 400);
-  // });
-
-  // $(window).on('load', function () {
-  //   if (location.hash) {
-  //     scrollToHash(location.hash, 0);
-  //   }
-  // });
-
-
-  /* =================================
   アニメーション　フェードイン
  ================================= */
   $(window).scroll(function () {
@@ -106,14 +57,18 @@ $(function () {
 
 // GSAP
 
-/* =================================
-  ファーストビュー
-================================= */
+gsap.registerPlugin(ScrollTrigger);
 
 $(function () {
   fvAnimation();
+  conceptAnimation();
+  valueAnimation();
+  businessAnimation();
 });
 
+/* =================================
+FV
+================================= */
 function fvAnimation() {
   const fvTl = gsap.timeline();
 
@@ -160,39 +115,248 @@ function fvAnimation() {
     }, '-=.6');
 }
 
-  /* =================================
-  背景画像
- ================================= */
+/* =================================
+各セクション
+================================= */
+function conceptAnimation() {
+  $('.concept-section').each(function () {
+    const section = this;
+    const $sub = $(section).find('.top-content__sub');
+    const $title = $(section).find('.top-content__title');
+    const $body = $(section).find('.top-content__body p');
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: 'top 70%',
+        toggleActions: 'play none none none'
+      }
+    });
+
+    if ($sub.length) {
+      tl.from($sub, {
+        opacity: 0,
+        y: 20,
+        duration: .8,
+        ease: 'power3.out'
+      });
+    }
+
+    if ($title.length) {
+      tl.from($title, {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        ease: 'power3.out'
+      }, '-=.5');
+    }
+
+    if ($body.length) {
+      tl.from($body, {
+        opacity: 0,
+        y: 20,
+        duration: .8,
+        stagger: .12,
+        ease: 'power3.out'
+      }, '-=.5');
+    }
+  });
+}
+
+/* =================================
+VALUE
+================================= */
+function valueAnimation() {
+  gsap.utils.toArray('.value-content__item').forEach((item) => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: item,
+        start: 'top 80%',
+        toggleActions: 'play none none none'
+      }
+    });
+
+    tl.from($(item).find('.value-content__number'), {
+        opacity: 0,
+        x: -20,
+        duration: .6,
+        ease: 'power3.out'
+      })
+      .from($(item).find('.value-content__icon'), {
+        opacity: 0,
+        scale: .9,
+        duration: .8,
+        ease: 'power3.out'
+      }, '-=.4')
+      .from($(item).find('.value-content__title'), {
+        opacity: 0,
+        y: 20,
+        duration: .7,
+        ease: 'power3.out'
+      }, '-=.4')
+      .from($(item).find('.value-content__lead'), {
+        opacity: 0,
+        y: 15,
+        duration: .6,
+        ease: 'power3.out'
+      }, '-=.35')
+      .from($(item).find('.value-content__text'), {
+        opacity: 0,
+        y: 15,
+        duration: .7,
+        ease: 'power3.out'
+      }, '-=.3');
+  });
+
+  gsap.from('.value-text > *', {
+    scrollTrigger: {
+      trigger: '.value-text',
+      start: 'top 80%',
+      toggleActions: 'play none none none'
+    },
+    opacity: 0,
+    y: 30,
+    duration: .8,
+    stagger: .15,
+    ease: 'power3.out'
+  });
+}
+
+/* =================================
+BUSINESS
+================================= */
+function businessAnimation() {
+  gsap.utils.toArray('.business-content__item').forEach((item) => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: item,
+        start: 'top 80%',
+        toggleActions: 'play none none none'
+      }
+    });
+
+    tl.from($(item).find('.business-content__image'), {
+        opacity: 0,
+        y: 30,
+        duration: .9,
+        ease: 'power3.out'
+      })
+      .from($(item).find('.business-content__logo'), {
+        opacity: 0,
+        y: 15,
+        duration: .6,
+        ease: 'power3.out'
+      }, '-=.5')
+      .from($(item).find('.business-content__title, .business-content__en'), {
+        opacity: 0,
+        y: 15,
+        duration: .6,
+        stagger: .1,
+        ease: 'power3.out'
+      }, '-=.35')
+      .from($(item).find('.business-content__text'), {
+        opacity: 0,
+        y: 15,
+        duration: .7,
+        ease: 'power3.out'
+      }, '-=.3');
+  });
+}
+
+/* =================================
+Story
+================================= */
 gsap.registerPlugin(ScrollTrigger);
 
-$('.concept-section').each(function () {
-  const section = this;
+$('.story-content__item').each(function () {
+  const item = this;
+  const isSp = window.matchMedia('(max-width: 767px)').matches;
 
   const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: section,
-      start: 'top 70%',
+      trigger: item,
+      start: 'top 80%',
       toggleActions: 'play none none none'
     }
   });
 
-  tl.from($(section).find('.concept-section__sub'), {
+  tl.from($(item).find('.story-content__year'), {
+      opacity: 0,
+      y: 30,
+      duration: .8,
+      ease: 'power3.out'
+    })
+    .from($(item).find('.story-content__icon'), {
+      opacity: 0,
+      scale: .85,
+      duration: .7,
+      ease: 'back.out(1.5)'
+    }, '-=.5')
+    .from($(item).find('.story-content__body'), {
+      opacity: 0,
+      y: 25,
+      duration: .8,
+      ease: 'power3.out'
+    }, '-=.4')
+    .from($(item).find('.story-content__image'), {
+      opacity: 0,
+      x: isSp ? 0 : 40,
+      y: isSp ? 25 : 0,
+      duration: .9,
+      ease: 'power3.out'
+    }, '-=.5');
+});
+
+/* =================================
+ Message
+================================= */
+const messageTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.message-content',
+    start: 'top 75%',
+    toggleActions: 'play none none none'
+  }
+});
+
+messageTl
+  .from('.message-content__visual', {
     opacity: 0,
-    y: 20,
-    duration: .8,
-    ease: 'power3.out'
-  })
-  .from($(section).find('.concept-section__title'), {
-    opacity: 0,
-    y: 30,
+    x: -40,
     duration: 1,
     ease: 'power3.out'
-  }, '-=.5')
-  .from($(section).find('.concept-section__body p'), {
+  })
+  .from('.message-content__intro-text', {
     opacity: 0,
-    y: 20,
-    duration: .8,
+    y: 30,
+    duration: .9,
+    ease: 'power3.out'
+  }, '-=.5')
+  .from('.message-content__body > p', {
+    opacity: 0,
+    y: 25,
+    duration: .7,
     stagger: .12,
     ease: 'power3.out'
-  }, '-=.5');
+  }, '-=.4')
+  .from('.message-content__signature', {
+    opacity: 0,
+    y: 20,
+    duration: .7,
+    ease: 'power3.out'
+  }, '-=.3');
+
+/* =================================
+Company Profile
+ ================================= */
+gsap.from('.company-content__item', {
+  scrollTrigger: {
+    trigger: '.company-content',
+    start: 'top 80%',
+    toggleActions: 'play none none none'
+  },
+  opacity: 0,
+  y: 25,
+  duration: .8,
+  stagger: .12,
+  ease: 'power3.out'
 });
