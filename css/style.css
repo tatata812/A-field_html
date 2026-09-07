@@ -704,11 +704,6 @@ story-content
 }
 @media (max-width: 1340px) {
   .story-content__item {
-    grid-template-columns: 220px 110px 1fr 220px;
-  }
-}
-@media (max-width: 1340px) {
-  .story-content__item {
     grid-template-columns: 1fr 90px;
     gap: 20px;
     min-height: 0;
