@@ -360,3 +360,31 @@ gsap.from('.company-content__item', {
   stagger: .12,
   ease: 'power3.out'
 });
+
+/* =================================
+contact-content
+ ================================= */
+ gsap.from('.contact-content__item', {
+  scrollTrigger: {
+    trigger: '.contact-content',
+    start: 'top 80%',
+    toggleActions: 'play none none none'
+  },
+  opacity: 0,
+  y: 25,
+  duration: .7,
+  stagger: .1,
+  ease: 'power3.out'
+});
+
+gsap.from('.contact-content__submit', {
+  scrollTrigger: {
+    trigger: '.contact-content__submit',
+    start: 'top 90%',
+    toggleActions: 'play none none none'
+  },
+  opacity: 0,
+  y: 20,
+  duration: .7,
+  ease: 'power3.out'
+});

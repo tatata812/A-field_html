@@ -12,7 +12,7 @@
   <meta name="description" content="A.fieldのHPです。">
 
   <!-- noindex（公開時は削除） -->
-  <meta name="robots" content="noindex, nofollow">
+
 
   <!-- ファビコン -->
   <link rel="icon" href="/favicon.ico">
@@ -20,11 +20,11 @@
 
   <!-- OGP（仮・あとでWP化） -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="サイトタイトル">
-  <meta property="og:description" content="サイトの説明文が入ります。">
-  <meta property="og:url" content="https://example.com/">
-  <meta property="og:image" content="https://example.com/ogp.jpg">
-  <meta property="og:site_name" content="サイト名">
+  <meta property="og:title" content="A.field">
+  <meta property="og:description" content="A.fieldのHPです。">
+  <meta property="og:url" content="https://a-field.jp/">
+  <meta property="og:image" content="https://a-field.jp/ogp.jpg">
+  <meta property="og:site_name" content="A.field">
 
   <!-- Twitterカード -->
   <meta name="twitter:card" content="summary_large_image">
@@ -62,7 +62,7 @@
           <li><a href="#story">Our Story</a></li>
           <li><a href="#message">Message</a></li>
           <li><a href="#company">Company Profile</a></li>
-          <!-- <li><a href="#contact">Contact</a></li> -->
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
       <button class="header__menu" type="button" aria-label="メニューを開く" aria-expanded="false">
@@ -842,6 +842,98 @@
               <dd>Aspiration - 志 ／ Love - 愛 ／ Passion - 熱意</dd>
             </div>
           </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="concept-section" id="contact">
+      <div class="concept-section__bg">
+        <div class="concept-section__bg-fixed concept-section__bg-fixed--contact"></div>
+      </div>
+
+      <div class="top-content">
+        <p class="top-content__sub">
+          - Contact<span class="top-content__line"></span>お問い合わせ
+        </p>
+
+        <h2 class="top-content__title">
+          お気軽にお問い合わせください。
+        </h2>
+
+        <div class="top-content__body">
+          <p>
+            A.fieldへのご相談・ご質問などございましたら、<br class="pc-block">
+            下記フォームよりお気軽にお問い合わせください。
+          </p>
+        </div>
+
+        <div class="contact-content">
+          <form class="contact-content__form" action="" method="post">
+            <div class="contact-content__item">
+              <label class="contact-content__label" for="company">
+                貴社名
+                <span class="contact-content__optional">任意</span>
+              </label>
+              <div class="contact-content__field">
+                <input type="text" id="company" name="company">
+              </div>
+            </div>
+
+            <div class="contact-content__item">
+              <label class="contact-content__label" for="name">
+                氏名
+                <span class="contact-content__required">必須</span>
+              </label>
+              <div class="contact-content__field">
+                <input type="text" id="name" name="name" required>
+              </div>
+            </div>
+
+            <div class="contact-content__item">
+              <label class="contact-content__label" for="email">
+                メールアドレス
+                <span class="contact-content__required">必須</span>
+              </label>
+              <div class="contact-content__field">
+                <input type="email" id="email" name="email" placeholder="example@email.com" required>
+              </div>
+            </div>
+
+            <div class="contact-content__item">
+              <label class="contact-content__label" for="tel">
+                電話番号
+                <span class="contact-content__required">必須</span>
+              </label>
+              <div class="contact-content__field">
+                <input type="tel" id="tel" name="tel" placeholder="090-0000-0000" required>
+              </div>
+            </div>
+
+            <div class="contact-content__item">
+              <label class="contact-content__label" for="address">
+                住所
+                <span class="contact-content__optional">任意</span>
+              </label>
+              <div class="contact-content__field">
+                <input type="text" id="address" name="address">
+              </div>
+            </div>
+
+            <div class="contact-content__item contact-content__item--textarea">
+              <label class="contact-content__label" for="message">
+                問い合わせ内容
+                <span class="contact-content__required">必須</span>
+              </label>
+              <div class="contact-content__field">
+                <textarea id="message" name="message" required></textarea>
+              </div>
+            </div>
+
+            <div class="contact-content__submit">
+              <button type="submit">送信する</button>
+            </div>
+          </form>
         </div>
       </div>
     </section>

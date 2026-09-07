@@ -300,6 +300,9 @@ concept section
 .concept-section__bg-fixed--company {
   background-image: url("../img/top/bg_company.png");
 }
+.concept-section__bg-fixed--contact {
+  background-image: url("../img/top/bg_story.png");
+}
 
 /* =================================
 top content
@@ -1031,6 +1034,166 @@ Company Profile
     font-size: 14px;
     line-height: 1.8;
   }
+}
+
+/* =================================
+contact-content
+ ================================= */
+.contact-content {
+  width: min(100%, 1000px);
+  margin: 80px auto 0;
+}
+@media (max-width: 960px) {
+  .contact-content {
+    margin-top: 50px;
+  }
+}
+.contact-content__form {
+  border-top: 1px solid rgba(80, 65, 45, 0.5);
+}
+.contact-content__item {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  align-items: center;
+  min-height: 110px;
+  border-bottom: 1px solid rgba(80, 65, 45, 0.5);
+}
+@media (max-width: 960px) {
+  .contact-content__item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    min-height: 0;
+    padding: 24px 0;
+  }
+}
+.contact-content__item--textarea {
+  align-items: start;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+@media (max-width: 960px) {
+  .contact-content__item--textarea {
+    padding: 24px 0;
+  }
+}
+.contact-content__label {
+  color: #555;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.06em;
+}
+@media (max-width: 960px) {
+  .contact-content__label {
+    font-size: 14px;
+  }
+}
+.contact-content__required, .contact-content__optional {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 2px 7px;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.4;
+  vertical-align: middle;
+  letter-spacing: 0.05em;
+}
+.contact-content__required {
+  border: 1px solid #9a7743;
+  color: #9a7743;
+}
+.contact-content__optional {
+  border: 1px solid #aaa;
+  color: #888;
+}
+.contact-content__field input,
+.contact-content__field textarea {
+  display: block;
+  width: 100%;
+  padding: 15px 18px;
+  border: 1px solid rgba(80, 65, 45, 0.3);
+  border-radius: 0;
+  outline: none;
+  background: rgba(255, 255, 255, 0.65);
+  color: #444;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+  transition: border-color 0.3s, background 0.3s;
+}
+@media (max-width: 960px) {
+  .contact-content__field input,
+  .contact-content__field textarea {
+    padding: 13px 15px;
+    font-size: 14px;
+  }
+}
+.contact-content__field input::-moz-placeholder, .contact-content__field textarea::-moz-placeholder {
+  color: #aaa;
+}
+.contact-content__field input::placeholder,
+.contact-content__field textarea::placeholder {
+  color: #aaa;
+}
+.contact-content__field input:focus,
+.contact-content__field textarea:focus {
+  border-color: #9a7743;
+  background: rgba(255, 255, 255, 0.9);
+}
+.contact-content__field textarea {
+  height: 200px;
+  resize: vertical;
+}
+@media (max-width: 960px) {
+  .contact-content__field textarea {
+    height: 180px;
+  }
+}
+.contact-content__submit {
+  margin-top: 45px;
+  text-align: center;
+}
+@media (max-width: 960px) {
+  .contact-content__submit {
+    margin-top: 35px;
+  }
+}
+.contact-content__submit button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  padding: 18px 25px;
+  border: 1px solid #80612c;
+  background: #72531e;
+  color: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  transition: color 0.3s, background 0.3s;
+}
+@media (max-width: 960px) {
+  .contact-content__submit button {
+    width: 240px;
+    padding: 17px 22px;
+    font-size: 14px;
+  }
+}
+.contact-content__submit button:hover {
+  background: #80612c;
+  color: #fff;
+}
+.contact-content__submit button:hover .contact-content__arrow {
+  transform: translateX(5px);
+}
+.contact-content__arrow {
+  font-size: 20px;
+  font-weight: 300;
+  transition: transform 0.3s;
 }
 
 /* サイト全体スタイルシート */
