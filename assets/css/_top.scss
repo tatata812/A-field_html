@@ -185,15 +185,15 @@
 
   &__logo {
     position: absolute;
-    right: 4%;
-    bottom: 6%;
+    right: 2%;
+    bottom: 4%;
     z-index: 2;
-    width: clamp(150px, 15vw, 260px);
+    width: clamp(100px, 8vw, 200px);
 
     @include tab {
-      right: 5%;
+      right: 2%;
       bottom: 10%;
-      width: 100px;
+      width: 80px;
     }
 
     img {

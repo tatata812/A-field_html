@@ -179,16 +179,16 @@
 }
 .fv__logo {
   position: absolute;
-  right: 4%;
-  bottom: 6%;
+  right: 2%;
+  bottom: 4%;
   z-index: 2;
-  width: clamp(150px, 15vw, 260px);
+  width: clamp(100px, 8vw, 200px);
 }
 @media (max-width: 960px) {
   .fv__logo {
-    right: 5%;
+    right: 2%;
     bottom: 10%;
-    width: 100px;
+    width: 80px;
   }
 }
 .fv__logo img {
